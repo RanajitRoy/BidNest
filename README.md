@@ -1,0 +1,2 @@
+# BidNest
+A bidding platform
