@@ -83,7 +83,7 @@ namespace users
 
         public bool UpdateUser(string email, string firstname, string lastname)
         {
-            Statement statement = _updateUserNameStatement.Bind(email, firstname, lastname);
+            Statement statement = _updateUserNameStatement.Bind(firstname, lastname, email);
             session.Execute(statement);
             return true;
         }

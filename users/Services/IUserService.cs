@@ -6,5 +6,7 @@ namespace users.Services
     {
         void CreateUser(User user);
         User? GetUser(string email);
+        void UpdateUser(string email, string firstName, string lastName);
+        void DeleteUser(string email);
     }
 }

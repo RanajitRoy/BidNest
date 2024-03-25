@@ -53,8 +53,20 @@ namespace users.Controllers
             else
             {
                 UserResponse response = new(Email:user.Email, FirstName:user.FirstName, LastName:user.LastName);
-                return Ok();
+                return Ok(response);
             }
+        }
+
+        [HttpPut]
+        public IActionResult UpdateUser(UpdateUserRequest request)
+        {
+            if (_userService.GetUser(request.Email) != null)
+            {
+                return NotFound(request.Email + " not found!");
+            }
+
+            _userService.UpdateUser(request.Email, request.FirstName, request.LastName);
+            return Ok();
         }
     }
 }

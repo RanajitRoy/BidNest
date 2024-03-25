@@ -34,5 +34,15 @@ namespace users.Services
             User? user = _userDAO.GetUser(email);
             return user;
         }
+
+        public void UpdateUser(string email, string firstName, string lastName)
+        {
+            _userDAO.UpdateUser(email, firstName, lastName);
+        }
+
+        public void DeleteUser(string email)
+        {
+            _userDAO.DeleteUser(email);
+        }
     }
 }
