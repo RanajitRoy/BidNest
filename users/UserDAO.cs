@@ -65,12 +65,12 @@ namespace users
             {
                 return null;
             }
-            User user = new User();
-            user.Email = email;
-            user.FirstName = firstRow.GetValue<string>("firstname");
-            user.LastName = firstRow.GetValue<string>("lastname");
-            user.Salt = firstRow.GetValue<string>("salt");
-            user.HashedPassword = firstRow.GetValue<string>("hashedpass");
+            User user = new()
+            {
+                Email = email,
+                FirstName = firstRow.GetValue<string>("firstname"),
+                LastName = firstRow.GetValue<string>("lastname")
+            };
             return user;
         }
 
