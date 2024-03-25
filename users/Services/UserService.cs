@@ -44,5 +44,24 @@ namespace users.Services
         {
             _userDAO.DeleteUser(email);
         }
+        public bool VerifyCredentials(string email, string password)
+        {
+            User? user = GetUser(email);
+            if (user == null)
+            {
+                return false;
+            }
+            else
+            {
+                byte[] salt = Convert.FromBase64String(user.Salt);
+                string hashedPass = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                    password: password!,
+                    salt: salt,
+                    prf: KeyDerivationPrf.HMACSHA256,
+                    iterationCount: 100000,
+                    numBytesRequested: 256 / 8));
+                return user.HashedPassword == hashedPass;
+            }
+        }
     }
 }

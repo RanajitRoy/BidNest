@@ -69,7 +69,9 @@ namespace users
             {
                 Email = email,
                 FirstName = firstRow.GetValue<string>("firstname"),
-                LastName = firstRow.GetValue<string>("lastname")
+                LastName = firstRow.GetValue<string>("lastname"),
+                Salt = firstRow.GetValue<string>("salt"),
+                HashedPassword = firstRow.GetValue<string>("hashedpass")
             };
             return user;
         }

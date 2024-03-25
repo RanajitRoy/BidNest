@@ -52,21 +52,43 @@ namespace users.Controllers
             }
             else
             {
-                UserResponse response = new(Email:user.Email, FirstName:user.FirstName, LastName:user.LastName);
+                UserResponse response = new(Email: user.Email, FirstName: user.FirstName, LastName: user.LastName);
                 return Ok(response);
+            }
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteUser(string email)
+        {
+            User? user = _userService.GetUser(email);
+            if (user == null)
+            {
+                return NotFound(email);
+            }
+            else
+            {
+                _userService.DeleteUser(email);
+                return Ok();
             }
         }
 
         [HttpPut]
         public IActionResult UpdateUser(UpdateUserRequest request)
         {
-            if (_userService.GetUser(request.Email) != null)
+            if (_userService.GetUser(request.Email) == null)
             {
                 return NotFound(request.Email + " not found!");
             }
 
             _userService.UpdateUser(request.Email, request.FirstName, request.LastName);
             return Ok();
+        }
+
+        [HttpPost("login")]
+        public IActionResult VerifyUser(VerifyCredentialsRequest request)
+        {
+            bool allowed = _userService.VerifyCredentials(request.Email, request.Password);
+            return Ok(new VerifyCredentialsResponse(allowed));
         }
     }
 }

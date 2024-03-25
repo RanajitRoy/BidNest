@@ -8,5 +8,6 @@ namespace users.Services
         User? GetUser(string email);
         void UpdateUser(string email, string firstName, string lastName);
         void DeleteUser(string email);
+        bool VerifyCredentials(string email, string password);
     }
 }
