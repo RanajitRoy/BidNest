@@ -7,17 +7,6 @@ namespace users
 {
     public class UserDAO : IUserDAO
     {
-        // singleton object
-        //private static UserDAO? _instance = null;
-        //public static UserDAO GetUserDAO(ICon)
-        //{
-        //    if(_instance == null)
-        //        _instance = new UserDAO();
-        //    return _instance;
-        //}
-
-
-
         private ICluster cluster;
         private Cassandra.ISession session;
         private IConfiguration _config;
