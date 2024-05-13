@@ -1,5 +1,4 @@
-﻿using System.Net;
-using users.Models;
+﻿using users.Models;
 
 namespace users
 {
@@ -27,6 +26,8 @@ namespace users
             //_deleteUserStatement = session.Prepare("DELETE FROM user WHERE email=? IF EXISTS");
             //_getUserStatement = session.Prepare("SELECT * FROM user WHERE email=?");
         }
+
+
 
         public bool DeleteUser(string email)
         {
