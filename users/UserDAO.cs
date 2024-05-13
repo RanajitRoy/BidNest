@@ -1,6 +1,4 @@
-﻿using Cassandra;
-using Cassandra.Data.Linq;
-using System.Net;
+﻿using System.Net;
 using users.Models;
 
 namespace users
