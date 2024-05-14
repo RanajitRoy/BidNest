@@ -1,4 +1,5 @@
 using DotNetEnv;
+using items.Data;
 using users;
 using users.Services;
 
@@ -12,7 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IUserService, UserService>();
-builder.Services.AddSingleton<IUserDAO, UserDAO>();
+builder.Services.AddDbContext<AppDbContext>();
 
 var app = builder.Build();
 
