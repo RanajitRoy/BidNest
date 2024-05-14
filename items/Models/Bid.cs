@@ -1,9 +1,12 @@
-﻿namespace items.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace items.Models
 {
     public class Bid
     {
-        public Guid Id { get; set; }
-        public Guid UserId { get; set; }
-        public int Amount { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long Id { get; set; }
+        public required int Amount { get; set; }
+        public required User User { get; set; }
     }
 }
