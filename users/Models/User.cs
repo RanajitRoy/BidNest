@@ -2,13 +2,14 @@
 
 namespace users.Models
 {
-    [Table("users")]
     public class User
     {
-        public string Email { get; set; } = "";
-        public string FirstName { get; set; } = "";
-        public string LastName { get; set; } = "";
-        public string Salt { get; set; } = "";
-        public string HashedPassword { get; set; } = "";
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long Id { get; set; }
+        public required string Email { get; set; }
+        public required string FirstName { get; set; }
+        public required string LastName { get; set; }
+        public required string Salt { get; set; }
+        public required string HashedPassword { get; set; }
     }
 }
