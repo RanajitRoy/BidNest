@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+﻿using items.Data;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using users.Models;
 
@@ -8,11 +10,11 @@ namespace users.Services
     public class UserService : IUserService
     {
         IConfiguration _config;
-        IUserDAO _userDAO;
-        public UserService(IConfiguration config, IUserDAO dao)
+        AppDbContext _context;
+        public UserService(IConfiguration config, AppDbContext context)
         {
             _config = config;
-            _userDAO = dao;
+            _context = context;
         }
 
         public void CreateUser(User user)
@@ -26,23 +28,29 @@ namespace users.Services
                 numBytesRequested: 256 / 8));
             user.HashedPassword = hashed;
             user.Salt = Convert.ToBase64String(salt);
-            _userDAO.InsertUser(user);
+            _context.Users.Add(user);
+            _context.SaveChanges();
         }
 
         public User? GetUser(string email)
         {
-            User? user = _userDAO.GetUser(email);
+            User? user = _context.Users.First(x => x.Email == email);
             return user;
         }
 
         public void UpdateUser(string email, string firstName, string lastName)
         {
-            _userDAO.UpdateUser(email, firstName, lastName);
+            User? user =_context.Users.Where(x => x.Email == email).FirstOrDefault();
+            if(user == null) { return; }
+            user.FirstName = firstName;
+            user.LastName = lastName;
+            _context.SaveChanges();
         }
 
         public void DeleteUser(string email)
         {
-            _userDAO.DeleteUser(email);
+            _context.Users.Where(x => x.Email == email).ExecuteDelete();
+            _context.SaveChanges();
         }
         public bool VerifyCredentials(string email, string password)
         {
