@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+
+:root{
+  --dt-dark-color: #23282b;
+  --dt-light-color: #373a3b;
+  --dt-text-color: #f4fcff;
+  
+  --lt-dark-color: #306d81;
+  --lt-light-color: #c1efff;
+  --lt-text-color: #202529;
+
+  --accent-color: #3bceff;
+  
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--lt-light-color);
+    color: var(--lt-text-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--dt-light-color);
+    color: var(--dt-text-color);
+  }
+}
