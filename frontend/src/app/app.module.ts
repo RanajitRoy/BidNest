@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { HttpClientModule } from '@angular/common/http';
+import { SignOnPageModule } from './sign-on-page/sign-on-page.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { BodyComponent } from './body/body.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OAuthModule.forRoot(),
+    HttpClientModule,
+    SignOnPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
