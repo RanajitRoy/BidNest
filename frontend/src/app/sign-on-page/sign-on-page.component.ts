@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./sign-on-page.component.scss']
 })
 export class SignOnPageComponent {
-
+  signedIn = false;
 }

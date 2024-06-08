@@ -1,1 +1,7 @@
-<p>sign-on-page works!</p>
+<div *ngIf="signedIn; else notsignedin">
+  <app-login></app-login>
+</div>
+
+<ng-template #notsignedin>
+  <app-sign-up></app-sign-up>
+</ng-template>
