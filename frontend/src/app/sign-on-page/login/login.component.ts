@@ -10,6 +10,10 @@ export class LoginComponent {
 
   loginForm = new FormGroup({
     emailField: new FormControl('', [Validators.email, Validators.required]),
-    passwordField: new FormControl('', [Validators.required])
+    passwordField: new FormControl('', [Validators.minLength(6), Validators.required])
   })
+
+  onSubmit() {
+    console.table(this.loginForm.value)
+  }
 }
