@@ -1,1 +1,7 @@
-<p>sign-up works!</p>
+<form id="signupform" [formGroup]="signUpForm">
+  <input type="text" formControlName="firstNameField"/>
+  <input type="text" formControlName="lastNameField"/>
+  <input type="email" formControlName="emailField"/>
+  <input type="password" formControlName="passwordField"/>
+  <input type="password" formControlName="cpasswordField"/>
+</form>
