@@ -3,21 +3,22 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SignOnPageComponent } from './sign-on-page.component';
 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    SignOnPageComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule
   ],
   exports: [
-    LoginComponent,
-    SignUpComponent
+    SignOnPageComponent
   ]
 })
 export class SignOnPageModule { }
