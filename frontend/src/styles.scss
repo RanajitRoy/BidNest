@@ -20,15 +20,7 @@ body {
 
 
 
-@media (prefers-color-scheme: light) {
-  body {
-    background: var(--lt-light-color);
-    color: var(--lt-text-color);
-  }
-}
-@media (prefers-color-scheme: dark) {
   body {
     background: var(--dt-light-color);
     color: var(--dt-text-color);
   }
-}

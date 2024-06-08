@@ -28,15 +28,7 @@ button {
   font-weight: 600;
 }
 
-@media (prefers-color-scheme: light) {
-  input {
-    background-color: var(--lt-light-color);
-    color: var(--lt-text-color);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  input {
-    background-color: var(--dt-light-color);
-    color: var(--dt-text-color);
-  }
+input {
+  background-color: var(--dt-light-color);
+  color: var(--dt-text-color);
 }

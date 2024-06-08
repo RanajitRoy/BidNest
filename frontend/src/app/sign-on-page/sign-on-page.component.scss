@@ -33,15 +33,7 @@ input[type=radio]:checked + label {
   text-underline-offset: 10px;
 }
 
-@media (prefers-color-scheme: light) {
-  .signonpage {
-    background: var(--lt-dark-color);
-    color: var(--lt-text-color);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  .signonpage {
-    background: var(--dt-dark-color);
-    color: var(--dt-text-color);
-  }
+.signonpage {
+  background: var(--dt-dark-color);
+  color: var(--dt-text-color);
 }
