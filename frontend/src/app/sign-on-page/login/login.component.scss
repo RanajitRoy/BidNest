@@ -1,0 +1,43 @@
+#loginform {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  height: 40px;
+  padding: 0 15px;
+  margin-top: 30px;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  background-color: var(--dt-light-color);
+  color: var(--dt-text-color);
+}
+
+button {
+  background-color: var(--accent-color);
+  color:var(--dt-dark-color);
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 50px;
+  padding: 5px 10px;
+  margin-top: 30px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+button:disabled {
+  background-color: var(--accent-light-color);
+  color: #7e7e7e;
+}
+
+.formerror {
+  color: #ff0000;
+  font-size: 0.8rem;
+  height:10px;
+  margin: 2px 0 0 10px;
+}

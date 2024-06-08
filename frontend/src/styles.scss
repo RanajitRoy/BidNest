@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+:root{
+  --dt-dark-color: #23282b;
+  --dt-light-color: #373a3b;
+  --dt-text-color: #f4fcff;
+  
+  --lt-dark-color: #b5ebff;
+  --lt-light-color: #def6ff;
+  --lt-text-color: #202529;
+
+  --accent-color: #0fc3ff;
+  --accent-light-color: #abeaff;
+  
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+  body {
+    background: var(--dt-light-color);
+    color: var(--dt-text-color);
+  }

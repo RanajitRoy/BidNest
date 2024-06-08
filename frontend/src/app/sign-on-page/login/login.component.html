@@ -1,0 +1,13 @@
+<form id="loginform" [formGroup]="loginForm" (ngSubmit)="$event.preventDefault(); onSubmit()">
+  <input type="email" placeholder="Email" formControlName="emailField"/>
+  <p [style.visibility]="loginForm.get('emailField')?.touched &&
+      (loginForm.get('emailField')?.hasError('email') || loginForm.get('emailField')?.hasError('required')) ?
+      'visible' : 'hidden'"
+    class="formerror">Not an email</p>
+  <input type="password" placeholder="Password" formControlName="passwordField"/>
+  <p [style.visibility]="loginForm.get('passwordField')?.touched &&
+      (loginForm.get('passwordField')?.hasError('minLength') || loginForm.get('passwordField')?.hasError('required')) ?
+      'visible' : 'hidden'"
+    class="formerror">Password must be 6 characters long</p>
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>
