@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./sign-on-page.component.scss']
 })
 export class SignOnPageComponent {
-  activeForm : string = '';
+  activeForm : string = 'login';
 
   changeForm(event: any) {
     this.activeForm = event.target.value;

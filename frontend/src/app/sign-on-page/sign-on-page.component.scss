@@ -32,8 +32,6 @@ input[type=radio]:checked + label {
   text-underline-offset: 10px;
 }
 
-
-
 @media (prefers-color-scheme: light) {
   .signonpage {
     background: var(--lt-dark-color);
