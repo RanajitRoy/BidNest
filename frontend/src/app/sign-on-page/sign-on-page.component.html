@@ -1,6 +1,17 @@
-<div *ngIf="signedIn; else notsignedin">
-  <app-login></app-login>
+<div class="signonpage" >
+  <div id="signonradiocontainer">
+    <input class="signonradio" id="loginradio" name="activeform" value="login" type="radio" (change)="changeForm($event)" checked/>
+    <label for="loginradio">Log-in</label>
+    <input class="signonradio" id="signupradio" name="activeform" value="signup" type="radio" (change)="changeForm($event)"/>
+    <label for="signupradio">Sign-in</label> 
+  </div>
+  <ng-container *ngIf="activeForm === 'login'; then signedin else notsignedin">
+  </ng-container>
 </div>
+
+<ng-template #signedin>
+  <app-login></app-login>
+</ng-template>
 
 <ng-template #notsignedin>
   <app-sign-up></app-sign-up>
