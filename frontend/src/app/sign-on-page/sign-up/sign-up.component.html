@@ -23,6 +23,6 @@
   <p [style.visibility]="signUpForm.get('cpasswordField')?.touched &&
       signUpForm.hasError('checkPassword') ?
       'visible' : 'hidden'"
-    class="formerror">Not an email</p>
-  <button type="submit">Sign up</button>
+    class="formerror">Passwords must match</p>
+  <button type="submit" [disabled]="signUpForm.invalid">Sign up</button>
 </form>
