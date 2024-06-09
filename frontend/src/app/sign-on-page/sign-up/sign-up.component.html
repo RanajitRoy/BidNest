@@ -1,8 +1,28 @@
 <form id="signupform" [formGroup]="signUpForm">
-  <input type="text" placeholder="First name" formControlName="firstNameField"/>
-  <input type="text" placeholder="Last name" formControlName="lastNameField"/>
+  <input type="text" placeholder="First name" maxlength="30" formControlName="firstNameField"/>
+  <p [style.visibility]="signUpForm.get('firstNameField')?.touched &&
+      (signUpForm.get('firstNameField')?.hasError('maxlength') || signUpForm.get('firstNameField')?.hasError('required')) ?
+      'visible' : 'hidden'"
+    class="formerror">Length should be between 1 to 30</p>
+  <input type="text" placeholder="Last name" maxlength="30" formControlName="lastNameField"/>
+  <p [style.visibility]="signUpForm.get('lastNameField')?.touched &&
+      signUpForm.get('lastNameField')?.hasError('maxlength') ?
+      'visible' : 'hidden'"
+    class="formerror">Length should be less than 30</p>
   <input type="email" placeholder="Email" formControlName="emailField"/>
+  <p [style.visibility]="signUpForm.get('emailField')?.touched &&
+      (signUpForm.get('emailField')?.hasError('email') || signUpForm.get('emailField')?.hasError('required')) ?
+      'visible' : 'hidden'"
+    class="formerror">Not an email</p>
   <input type="password" placeholder="New password" formControlName="passwordField"/>
+  <p [style.visibility]="signUpForm.get('passwordField')?.touched &&
+      (signUpForm.get('passwordField')?.hasError('minlength') || signUpForm.get('passwordField')?.hasError('required')) ?
+      'visible' : 'hidden'"
+    class="formerror">Password must be 6 characters long</p>
   <input type="password" placeholder="Confirm password" formControlName="cpasswordField"/>
+  <p [style.visibility]="signUpForm.get('cpasswordField')?.touched &&
+      signUpForm.hasError('checkPassword') ?
+      'visible' : 'hidden'"
+    class="formerror">Not an email</p>
   <button type="submit">Sign up</button>
 </form>
