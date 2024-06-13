@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RoomsComponent } from './rooms.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    RoomsComponent
+  ],
   imports: [
     CommonModule
   ]
