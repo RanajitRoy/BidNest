@@ -4,7 +4,7 @@ import { SignOnPageComponent } from './sign-on-page/sign-on-page.component';
 
 const routes: Routes = [
   {
-    path: "signon", component: SignOnPageComponent
+    path: "signon", component: SignOnPageComponent, outlet: "main"
   }
 ];
 
