@@ -13,6 +13,9 @@ const routes: Routes = [
   },
   {
     path: "rooms", component: RoomsComponent, outlet: "main"
+  },
+  {
+    path: "", component: SignOnPageComponent, outlet: "main"
   }
 ];
 
