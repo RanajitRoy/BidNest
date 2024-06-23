@@ -10,6 +10,9 @@ import { RoomsComponent } from './rooms.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    RoomsComponent
   ]
 })
 export class RoomsModule { }

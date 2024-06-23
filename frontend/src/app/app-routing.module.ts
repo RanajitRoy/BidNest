@@ -6,16 +6,19 @@ import { RoomsComponent } from './rooms/rooms.component';
 
 const routes: Routes = [
   {
-    path: "signon", component: SignOnPageComponent, outlet: "main"
+    path: "signon", component: SignOnPageComponent, pathMatch: 'full'
   },
   {
-    path: "objects", component: ObjectsComponent, outlet: "main"
+    path: "objects", component: ObjectsComponent, pathMatch: 'full'
   },
   {
-    path: "rooms", component: RoomsComponent, outlet: "main"
+    path: "rooms", component: RoomsComponent, pathMatch: 'full'
   },
   {
-    path: "", component: SignOnPageComponent, outlet: "main"
+    path: "", component: SignOnPageComponent, pathMatch: 'full'
+  },
+  {
+    path: "**", component: SignOnPageComponent
   }
 ];
 

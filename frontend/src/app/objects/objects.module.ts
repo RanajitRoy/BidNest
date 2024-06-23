@@ -12,6 +12,9 @@ import { ObjectViewerComponent } from './object-viewer/object-viewer.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ObjectsComponent
   ]
 })
 export class ObjectsModule { }
