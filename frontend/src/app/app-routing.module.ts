@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignOnPageComponent } from './sign-on-page/sign-on-page.component';
 import { ObjectsComponent } from './objects/objects.component';
 import { RoomsComponent } from './rooms/rooms.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,7 @@ const routes: Routes = [
     path: "", component: SignOnPageComponent, pathMatch: 'full'
   },
   {
-    path: "**", component: SignOnPageComponent
+    path: "**", component: NotFoundComponent, pathMatch: 'full'
   }
 ];
 
