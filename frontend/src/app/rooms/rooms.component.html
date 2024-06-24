@@ -1,11 +1,15 @@
 <div id="rooms">
   <div class="searchContainer">
-    <input type="text" name="searchText" id="search-box" />
+    <input type="text" placeholder="Search Room" name="searchText" id="search-box" />
     <span id="search-button">Search</span>
-    <div class="roomContainer">
-      <div class="roomCard">
-        <p class="roomCardName"></p>
-      </div>
+  </div>
+  <div class="roomContainer">
+    <div *ngFor="let room of roomList" class="roomCard">
+      <span class="roomCardName">{{room.name}}</span>
+      <span class="roomCardName">{{room.description}}</span>
+      <span class="roomCardName">{{room.numOfObjects}}</span>
+      <span class="roomCardName">{{room.numOfUsers}}</span>
+      <span class="roomCardName">{{room.owner}}</span>
     </div>
   </div>
 </div>

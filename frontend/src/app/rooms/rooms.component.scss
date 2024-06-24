@@ -1,0 +1,56 @@
+#rooms {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  max-width: 960px;
+}
+
+#search-box {
+  height: 30px;
+  flex-grow: 1;
+  padding: 5px 10px;
+  max-width: 300px;
+  outline: none;
+  border-radius: 8px;
+  font-family: "Bree Serif", serif;
+  font-size: 1.2rem;
+  border: none;
+}
+
+#search-button {
+  display: block;
+  text-align: center;
+  padding: 8px 5px 2px 5px;
+  height: 30px;
+  flex-grow: 2;
+  max-width: 100px;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+.roomContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.roomCard {
+  height: 300px;
+  width: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  background-color: var(--dt-dark-color);
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px black;
+}
