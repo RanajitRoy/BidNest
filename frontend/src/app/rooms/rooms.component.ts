@@ -7,6 +7,7 @@ import { Room } from 'src/shared/types';
   styleUrls: ['./rooms.component.scss']
 })
 export class RoomsComponent {
+  user: string = "1";
   roomList: Room[] = [
     {
       id: '1',
