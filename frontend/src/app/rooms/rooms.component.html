@@ -1,0 +1,22 @@
+<div id="rooms">
+  <div class="searchContainer">
+    <input type="text" placeholder="Search Room" name="searchText" id="search-box" />
+    <span id="search-button">Search</span>
+  </div>
+  <div class="roomContainer">
+    <div *ngFor="let room of roomList" class="roomCard">
+      <span class="roomCardName">{{room.name}}</span>
+      <span class="roomCardDesc">{{room.description}}</span>
+      <div class="cardUserDetails">
+        <span class="roomCardOwner">{{room.owner === user ? "Created by you" : ""}}</span>
+        <span class="roomCardNumOfObj">{{room.numOfObjects}}</span>
+        <img class="smallIcon" src="assets/object_icon.png" alt="object">
+        <span class="roomCardNumOfUsers">{{room.numOfUsers}}</span>
+        <img class="smallIcon" src="assets/small_user_icon.png" alt="user">
+      </div>
+    </div>
+    <div class="roomCard" id="room-card-add">
+      <img class="roomAddIcon" src="assets/plus.svg" alt="add" />
+    </div>
+  </div>
+</div>

@@ -8,19 +8,26 @@ import { BodyComponent } from './body/body.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { HttpClientModule } from '@angular/common/http';
 import { SignOnPageModule } from './sign-on-page/sign-on-page.module';
+import { ObjectsModule } from './objects/objects.module';
+import { RoomsComponent } from './rooms/rooms.component';
+import { RoomsModule } from './rooms/rooms.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent
+    BodyComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     OAuthModule.forRoot(),
     HttpClientModule,
-    SignOnPageModule
+    SignOnPageModule,
+    ObjectsModule,
+    RoomsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

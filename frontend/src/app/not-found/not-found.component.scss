@@ -1,0 +1,35 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.notFoundContainer * {
+  margin-top: 30px;
+}
+
+.notFoundContainer a {
+  text-decoration: none;
+  color: white;
+  background-color: var(--accent-color);
+  padding: 8px 20px 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+.notFoundContainer a:valid {
+  color: white;
+
+}
+
+#not-found-img {
+  width: 60vw;
+  max-width: 600px;
+}

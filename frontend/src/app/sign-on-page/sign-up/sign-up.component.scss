@@ -7,11 +7,13 @@ input {
   box-sizing: border-box;
   border: none;
   outline: none;
-  height: 50px;
+  height: 40px;
   padding: 0 15px;
   margin-top: 20px;
   border-radius: 8px;
-  font-size: 1.15rem;
+  font-size: 1.0rem;
+  background-color: var(--dt-light-color);
+  color: var(--dt-text-color);
 }
 
 button {
@@ -28,7 +30,14 @@ button {
   font-weight: 600;
 }
 
-input {
-  background-color: var(--dt-light-color);
-  color: var(--dt-text-color);
+button:disabled {
+  background-color: var(--accent-light-color);
+  color: #7e7e7e;
+}
+
+.formerror {
+  color: #ff0000;
+  font-size: 0.8rem;
+  height:8px;
+  margin: 2px 0 0 10px;
 }
