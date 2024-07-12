@@ -1,1 +1,16 @@
-<p>add-room works!</p>
+<div id="add-room">
+  <form id="addroomform" [formGroup]="addRoomForm" (ngSubmit)="$event.preventDefault(); onSubmit()">
+    <input type="text" placeholder="Room Name" formControlName="nameField"/>
+    <p [style.visibility]="addRoomForm.get('nameField')?.touched &&
+        (addRoomForm.get('nameField')?.hasError('email') || addRoomForm.get('nameField')?.hasError('required')) ?
+        'visible' : 'hidden'"
+      class="formerror">Not an email</p>
+    <input type="text" placeholder="Description" formControlName="descField"/>
+
+    <p [style.visibility]="addRoomForm.get('passwordField')?.touched &&
+        (addRoomForm.get('passwordField')?.hasError('minLength') || addRoomForm.get('passwordField')?.hasError('required')) ?
+        'visible' : 'hidden'"
+      class="formerror">Password must be 6 characters long</p>
+    <button type="submit" [disabled]="addRoomForm.invalid">Login</button>
+  </form>
+</div>
