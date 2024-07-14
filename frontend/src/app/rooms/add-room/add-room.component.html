@@ -4,7 +4,7 @@
     <p [style.visibility]="addRoomForm.get('nameField')?.touched &&
         (addRoomForm.get('nameField')?.hasError('email') || addRoomForm.get('nameField')?.hasError('required')) ?
         'visible' : 'hidden'"
-      class="formerror">Not an email</p>
+      class="formerror">Required</p>
     <input type="text" placeholder="Description" formControlName="descField"/>
 
     <p [style.visibility]="addRoomForm.get('passwordField')?.touched &&
