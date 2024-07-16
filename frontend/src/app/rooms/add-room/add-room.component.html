@@ -7,10 +7,7 @@
       class="formerror">Required</p>
     <input type="text" placeholder="Description" formControlName="descField"/>
 
-    <p [style.visibility]="addRoomForm.get('passwordField')?.touched &&
-        (addRoomForm.get('passwordField')?.hasError('minLength') || addRoomForm.get('passwordField')?.hasError('required')) ?
-        'visible' : 'hidden'"
-      class="formerror">Password must be 6 characters long</p>
-    <button type="submit" [disabled]="addRoomForm.invalid">Login</button>
+    
+    <button type="submit" [disabled]="addRoomForm.invalid">Add</button>
   </form>
 </div>
